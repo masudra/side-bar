@@ -4,9 +4,8 @@ import { FaCog } from "react-icons/fa";
 import { FaFile } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { PiSunDimFill } from "react-icons/pi";
-
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
+import { IoMdArrowDroprightCircle } from "react-icons/io";
+import { IoMdArrowDropleftCircle } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
 export const Dashbord = () => {
@@ -15,7 +14,7 @@ export const Dashbord = () => {
   return (
     <div>
       <div
-        className={`h-screen bg-gray-900 text-white rounded-sm ${
+        className={`h-screen bg-gray-900  text-white rounded-sm ${
           isOpen ? "w-56 space-y-6 py-7 px-2" : "w-16 space-y-6 py-7 px-2"
         } `}
       >
@@ -28,7 +27,7 @@ export const Dashbord = () => {
           }`}
         >
           <img
-            className=" lg:w-28 md:w-20 w-12 "
+            className=" lg:w-28 md:w-20 w-16 "
             src="../../../public/LOGO-SADA-01-1.png"
           />
         </div>
@@ -133,14 +132,14 @@ export const Dashbord = () => {
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <div className="flex items-center place-content-start space-x-2 ">
-                <FaArrowLeft className="lg:text-2xl md:text-xl text-sm"></FaArrowLeft>
+                <IoMdArrowDropleftCircle className="lg:text-2xl md:text-xl text-sm"></IoMdArrowDropleftCircle>
                 <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
                   {" "}
                   Collapse menu
                 </h2>
               </div>
             ) : (
-              <FaArrowRight className="lg:text-2xl md:text-xl text-sm"></FaArrowRight>
+              <IoMdArrowDroprightCircle className="lg:text-2xl md:text-xl text-sm"></IoMdArrowDroprightCircle>
             )}
           </button>
         </div>
