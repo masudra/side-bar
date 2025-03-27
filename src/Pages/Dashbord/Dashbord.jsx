@@ -13,49 +13,59 @@ export const Dashbord = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <>
-      <div className="h-screen bg-gray-900 text-white w-64 space-y-6 py-7 px-2 ">
+    <div>
+      <div
+        className={`h-screen bg-gray-900 text-white rounded-sm ${
+          isOpen ? "w-56 space-y-6 py-7 px-2" : "w-16 space-y-6 py-7 px-2"
+        } `}
+      >
         {/*  company logo and toogle Buttone*/}
-        <div className="display flex items-center place-content-between space-x-4">
-          <img className=" w-28 " src="../../../public/LOGO-SADA-01-1.png" />
-
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <FaArrowLeft className="text-2xl"></FaArrowLeft>
-            ) : (
-              <FaArrowRight className="text-2xl"></FaArrowRight>
-            )}
-          </button>
+        <div
+          className={`${
+            isOpen
+              ? "display flex items-center place-content-between lg:space-x-4 space-x-2"
+              : "text-center "
+          }`}
+        >
+          <img
+            className=" lg:w-28 md:w-20 w-12 "
+            src="../../../public/LOGO-SADA-01-1.png"
+          />
         </div>
 
         {/* Navber Content  */}
         <nav>
           {/* first Content */}
-          <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
+          <div
+            isOpen={<FaHome></FaHome>}
+            className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] "
+          >
             <a href="#" className=" flex items-center space-x-2">
               <FaHome></FaHome>
-              <h1>Home</h1>
+              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Home</h2>
             </a>
           </div>
           {/* first Content */}
           <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
             <a href="#" className=" flex items-center space-x-2">
               <FaUser></FaUser>
-              <h1>User</h1>
+              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>User</h2>
             </a>
           </div>
           {/* first Content */}
           <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
             <a href="#" className=" flex items-center space-x-2">
               <FaCog></FaCog>
-              <h1>Setting</h1>
+              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
+                Setting
+              </h2>
             </a>
           </div>
           {/* first Content */}
           <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
             <a href="#" className=" flex items-center space-x-2">
               <FaFile></FaFile>
-              <h1>Files</h1>
+              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Files</h2>
             </a>
           </div>
         </nav>
@@ -67,35 +77,74 @@ export const Dashbord = () => {
             <img
               src="../.../../../../public/download (10).png"
               alt=""
-              className="w-10  rounded-[100%]  border-2 border-sky-500"
+              className={`${
+                isOpen
+                  ? "w-12 rounded-[100%]  border-2 border-sky-500"
+                  : "w-9 rounded-[100%]  border-2 border-sky-500"
+              }`}
             />
           </div>
-          <div className="text-start">
-            <h2 className=" text-[14px]">Masud Rana</h2>
-            <h2 className=" text-[10px]"> Web Developer </h2>
-          </div>
-          <div className="ml-auto">
-            <FiLogOut className="text-2xl"></FiLogOut>
-          </div>
+          {isOpen ? (
+            <>
+              {" "}
+              <div className="text-start">
+                <h2 className=" text-[14px]">Masud Rana</h2>
+                <h2 className=" text-[10px]"> Web Developer </h2>
+              </div>
+              <div className="ml-auto">
+                <FiLogOut className="text-2xl"></FiLogOut>
+              </div>{" "}
+            </>
+          ) : (
+            <></>
+          )}
         </div>
 
         {/*Light Mode and Dark Mode*/}
 
-        <div className=" bg-black display flex  items-center  place-content-between  border-2 border-gray-500 p-[3px] rounded-full">
-          <div className=" display flex items-center space-x-[6px]  bg-sky-950  p-2 px-2 rounded-full">
+        <div
+          className={`${
+            !isOpen
+              ? " pl-3"
+              : " bg-black display flex  items-center place-content-around border-2 border-gray-500 p-[3px] rounded-full"
+          }`}
+        >
+          <div
+            className={`${
+              isOpen
+                ? " display flex items-center bg-sky-950 p-[4px] rounded-full"
+                : "my-2"
+            }`}
+          >
             <PiSunDimFill className="text-xl"></PiSunDimFill>
-            <h2 className="text-sm">Light Mode</h2>
+            <h2 className={`${isOpen ? "text-sm" : "hidden"}`}>Light Mode</h2>
           </div>
-          <div className=" display flex  items-center space-x-[6px] p-2 px-2 rounded-full">
+          <div
+            className={`${
+              isOpen ? " display flex  items-center  p-[4px]  rounded-full" : ""
+            }`}
+          >
             <FaMoon className="text-sm"></FaMoon>
-            <h2 className="text-sm">Dark Mode</h2>
+            <h2 className={`${isOpen ? "text-sm" : "hidden"}`}>Dark Mode</h2>
           </div>
         </div>
 
-        {/*  Test */}
-
-        {/* test */}
+        <div>
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              <div className="flex items-center place-content-start space-x-2 ">
+                <FaArrowLeft className="lg:text-2xl md:text-xl text-sm"></FaArrowLeft>
+                <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
+                  {" "}
+                  Collapse menu
+                </h2>
+              </div>
+            ) : (
+              <FaArrowRight className="lg:text-2xl md:text-xl text-sm"></FaArrowRight>
+            )}
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
