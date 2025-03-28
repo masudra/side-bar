@@ -36,35 +36,72 @@ export const Dashbord = () => {
         <nav>
           {/* first Content */}
           <div
-            isOpen={<FaHome></FaHome>}
-            className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] "
+            className="group relative p-2 flex items-center rounded-lg text-xl my-2 
+           hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
           >
             <a href="#" className=" flex items-center space-x-2">
               <FaHome></FaHome>
               <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Home</h2>
+              {isOpen ? (
+                <span></span>
+              ) : (
+                <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                  Home
+                </span>
+              )}
             </a>
           </div>
           {/* first Content */}
-          <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
+          <div
+            className="group relative p-2 flex items-center rounded-lg text-xl my-2 
+           hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
+          >
             <a href="#" className=" flex items-center space-x-2">
               <FaUser></FaUser>
               <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>User</h2>
+              {isOpen ? (
+                <span></span>
+              ) : (
+                <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                  User
+                </span>
+              )}
             </a>
           </div>
           {/* first Content */}
-          <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
+          <div
+            className=" group relative p-2 flex items-center rounded-lg text-xl my-2 
+           hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
+          >
             <a href="#" className=" flex items-center space-x-2">
               <FaCog></FaCog>
               <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
                 Setting
               </h2>
+              {isOpen ? (
+                <span></span>
+              ) : (
+                <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                  Setting
+                </span>
+              )}
             </a>
           </div>
           {/* first Content */}
-          <div className=" p-2 flex items-center rounded-sm text-xl my-2 hover:bg-[#19B3E7] ">
+          <div
+            className="group relative p-2 flex items-center rounded-lg text-xl my-2 
+           hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
+          >
             <a href="#" className=" flex items-center space-x-2">
               <FaFile></FaFile>
               <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Files</h2>
+              {isOpen ? (
+                <span></span>
+              ) : (
+                <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                  Files
+                </span>
+              )}
             </a>
           </div>
         </nav>
@@ -72,7 +109,7 @@ export const Dashbord = () => {
         {/* User Profile Section  */}
 
         <div className=" display flex  items-center space-x-4">
-          <div>
+          <div className=" group relative p-2 flex items-center">
             <img
               src="../.../../../../public/download (10).png"
               alt=""
@@ -82,6 +119,14 @@ export const Dashbord = () => {
                   : "w-9 rounded-[100%]  border-2 border-sky-500"
               }`}
             />
+
+            {isOpen ? (
+              <span></span>
+            ) : (
+              <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                User Profile
+              </span>
+            )}
           </div>
           {isOpen ? (
             <>
@@ -128,18 +173,32 @@ export const Dashbord = () => {
           </div>
         </div>
 
-        <div>
-          <button onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="group relative p-2 flex items-center rounded-lg text-xl my-2 
+           hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
+        >
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className=" flex items-center "
+          >
             {isOpen ? (
               <div className="flex items-center place-content-start space-x-2 ">
-                <IoMdArrowDropleftCircle className="lg:text-2xl md:text-xl text-sm"></IoMdArrowDropleftCircle>
+                <IoMdArrowDropleftCircle></IoMdArrowDropleftCircle>
                 <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
                   {" "}
                   Collapse menu
                 </h2>
               </div>
             ) : (
-              <IoMdArrowDroprightCircle className="lg:text-2xl md:text-xl text-sm"></IoMdArrowDroprightCircle>
+              <IoMdArrowDroprightCircle></IoMdArrowDroprightCircle>
+            )}
+
+            {isOpen ? (
+              <span></span>
+            ) : (
+              <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                Collapse menu{" "}
+              </span>
             )}
           </button>
         </div>
