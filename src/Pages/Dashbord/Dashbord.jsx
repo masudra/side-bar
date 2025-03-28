@@ -15,8 +15,8 @@ export const Dashbord = () => {
     <div>
       <div
         className={`h-screen bg-gray-900  text-white rounded-sm ${
-          isOpen ? "w-56 space-y-6 py-7 px-2" : "w-16 space-y-6 py-7 px-2"
-        } `}
+          isOpen ? "w-56 space-y-3 py-4  px-2" : "w-14 space-y-2 py-2 px-2"
+        } transition-all duration-700 ease-in-out flex flex-col justify-between`}
       >
         {/*  company logo and toogle Buttone*/}
         <div
@@ -40,8 +40,12 @@ export const Dashbord = () => {
            hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
           >
             <a href="#" className=" flex items-center space-x-2">
-              <FaHome></FaHome>
-              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Home</h2>
+              <FaHome className="text-[18px]"></FaHome>
+              <h2
+                className={`${isOpen ? "inline-block text-[18px]" : "hidden"}`}
+              >
+                Home
+              </h2>
               {isOpen ? (
                 <span></span>
               ) : (
@@ -57,8 +61,12 @@ export const Dashbord = () => {
            hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
           >
             <a href="#" className=" flex items-center space-x-2">
-              <FaUser></FaUser>
-              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>User</h2>
+              <FaUser className="text-[18px]"></FaUser>
+              <h2
+                className={`${isOpen ? "inline-block text-[18px]" : "hidden"}`}
+              >
+                User
+              </h2>
               {isOpen ? (
                 <span></span>
               ) : (
@@ -74,8 +82,10 @@ export const Dashbord = () => {
            hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
           >
             <a href="#" className=" flex items-center space-x-2">
-              <FaCog></FaCog>
-              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
+              <FaCog className="text-[18px]"></FaCog>
+              <h2
+                className={`${isOpen ? "inline-block text-[18px]" : "hidden"}`}
+              >
                 Setting
               </h2>
               {isOpen ? (
@@ -93,8 +103,12 @@ export const Dashbord = () => {
            hover:bg-[#19B3E7] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out transform"
           >
             <a href="#" className=" flex items-center space-x-2">
-              <FaFile></FaFile>
-              <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>Files</h2>
+              <FaFile className="text-[18px]"></FaFile>
+              <h2
+                className={`${isOpen ? "inline-block text-[18px]" : "hidden"}`}
+              >
+                Files
+              </h2>
               {isOpen ? (
                 <span></span>
               ) : (
@@ -105,44 +119,6 @@ export const Dashbord = () => {
             </a>
           </div>
         </nav>
-
-        {/* User Profile Section  */}
-
-        <div className=" display flex  items-center space-x-4">
-          <div className=" group relative p-2 flex items-center">
-            <img
-              src="../.../../../../public/download (10).png"
-              alt=""
-              className={`${
-                isOpen
-                  ? "w-12 rounded-[100%]  border-2 border-sky-500"
-                  : "w-9 rounded-[100%]  border-2 border-sky-500"
-              }`}
-            />
-
-            {isOpen ? (
-              <span></span>
-            ) : (
-              <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
-                User Profile
-              </span>
-            )}
-          </div>
-          {isOpen ? (
-            <>
-              {" "}
-              <div className="text-start">
-                <h2 className=" text-[14px]">Masud Rana</h2>
-                <h2 className=" text-[10px]"> Web Developer </h2>
-              </div>
-              <div className="ml-auto">
-                <FiLogOut className="text-2xl"></FiLogOut>
-              </div>{" "}
-            </>
-          ) : (
-            <></>
-          )}
-        </div>
 
         {/*Light Mode and Dark Mode*/}
 
@@ -183,14 +159,18 @@ export const Dashbord = () => {
           >
             {isOpen ? (
               <div className="flex items-center place-content-start space-x-2 ">
-                <IoMdArrowDropleftCircle></IoMdArrowDropleftCircle>
-                <h2 className={`${isOpen ? "inline-block" : "hidden"}`}>
+                <IoMdArrowDropleftCircle className="text-[18px]"></IoMdArrowDropleftCircle>
+                <h2
+                  className={`${
+                    isOpen ? "inline-block text-[18px]" : "hidden"
+                  }`}
+                >
                   {" "}
                   Collapse menu
                 </h2>
               </div>
             ) : (
-              <IoMdArrowDroprightCircle></IoMdArrowDroprightCircle>
+              <IoMdArrowDroprightCircle className="text-[18px]"></IoMdArrowDroprightCircle>
             )}
 
             {isOpen ? (
@@ -201,6 +181,43 @@ export const Dashbord = () => {
               </span>
             )}
           </button>
+        </div>
+
+        {/* User Profile Section  */}
+
+        <div className="flex items-center space-x-4 px-2 mt-auto">
+          <div className=" group relative flex items-center">
+            <img
+              src="../.../../../../public/download (10).png"
+              className={`${
+                isOpen
+                  ? "w-12 rounded-[100%]  border-2 border-sky-500"
+                  : "max-w-8 rounded-[100%]  border-2 border-sky-500"
+              }`}
+            />
+
+            {isOpen ? (
+              <span></span>
+            ) : (
+              <span className="absolute left-14 bg-[#19B3E7] text-white text-sm px-2 py-2 rounded-sm  opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 whitespace-nowrap">
+                User Profile
+              </span>
+            )}
+          </div>
+          {isOpen ? (
+            <>
+              {" "}
+              <div className="text-start">
+                <h2 className=" text-[16px]">Masud Rana</h2>
+                <h2 className=" text-[12px]"> Web Developer </h2>
+              </div>
+              <div className="ml-auto">
+                <FiLogOut className="text-[20px]"></FiLogOut>
+              </div>{" "}
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
